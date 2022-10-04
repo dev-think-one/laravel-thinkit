@@ -39,6 +39,18 @@ php artisan vendor:publish --provider="ThinKit\ServiceProvider" --tag="config"
 \ThinKit\Helpers\Url::addOrUpdateArgs('https://my.path.co.uk?example=foo&test=bar', 'new', 'baz');
 ```
 
+#### DateTime
+
+```php
+$formats = [
+            'Y-m-d',
+            'Y-m-d\TH:i:s',
+        ];
+        
+$carbonDate = \ThinKit\Helpers\DateTime::createFromMultipleFormats($formats, '2022-09-28T08:19:00');
+$carbonDate->format('Y-m-d H:i:s');
+```
+
 ## Credits
 
 - [![Think Studio](https://yaroslawww.github.io/images/sponsors/packages/logo-think-studio.png)](https://think.studio/) 
