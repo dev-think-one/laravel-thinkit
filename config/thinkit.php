@@ -29,4 +29,19 @@ return [
         explode(',', env('APP_DEV_EMAILS', env('MAIN_DEV_EMAIL', 'yg@think.studio')))
     )),
 
+
+    /*
+     |--------------------------------------------------------------------------
+     | Enums
+     |--------------------------------------------------------------------------
+     |
+     */
+    'enums' => [
+        'trans_file_name'       => 'enums',
+        'formatted_options_key' => [
+            'value' => 'value',
+            'label' => 'label',
+        ],
+    ],
+
 ];

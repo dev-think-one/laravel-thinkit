@@ -51,6 +51,25 @@ $carbonDate = \ThinKit\Helpers\DateTime::createFromMultipleFormats($formats, '20
 $carbonDate->format('Y-m-d H:i:s');
 ```
 
+### Enums
+
+```php
+use ThinKit\Enums\HasNames;
+
+enum SalesCallType: string
+{
+    use HasNames;
+
+    case GENERAL = 'general';
+    case EVENT = 'event';
+    case AWARD = 'award';
+}
+
+SalesCallType::GENERAL->name() // translation label
+SalesCallType::options() // ["<value>" => "<translation label>"]
+SalesCallType::formattedOptions() // [["value" => "<value>", "label" => "<translation label>"]]
+```
+
 ## Credits
 
 - [![Think Studio](https://yaroslawww.github.io/images/sponsors/packages/logo-think-studio.png)](https://think.studio/) 

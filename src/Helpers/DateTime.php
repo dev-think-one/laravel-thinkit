@@ -28,7 +28,7 @@ class DateTime
                 $lastError = $e;
             }
         }
-        if (!$dateObj) {
+        if (!$dateObj && $lastError) {
             throw $lastError;
         }
 
