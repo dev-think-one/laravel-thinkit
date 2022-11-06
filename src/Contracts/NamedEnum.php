@@ -10,16 +10,6 @@ interface NamedEnum
     public function name(): string;
 
     /**
-     * Translations file name.
-     */
-    public function transFileName(): string;
-
-    /**
-     * Translations key used for enum.
-     */
-    public function transKey(): string;
-
-    /**
      * Convert enum to array with names.
      */
     public static function options(): array;
