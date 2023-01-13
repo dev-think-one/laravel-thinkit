@@ -28,6 +28,9 @@ class Url
         if (!empty($a['host'])) {
             $result .= '//'.$a['host'];
         }
+        if (!empty($a['port'])) {
+            $result .= ':'.$a['port'];
+        }
         if (!empty($a['path'])) {
             $result .= $a['path'];
         }
