@@ -13,6 +13,7 @@ class PhpInfoController extends Controller
             ((string) $request->input('pass')) === config('thinkit.php.info_pass')
         ) {
             phpinfo();
+            return;
         }
         abort(404);
     }
