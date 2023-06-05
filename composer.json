@@ -20,7 +20,7 @@
         "illuminate/support": "^9.0|^10.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.14",
+        "friendsofphp/php-cs-fixer": "^3.17",
         "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^10.0",
         "psalm/plugin-laravel": "^2.8",
@@ -37,8 +37,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --stop-on-failure",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "test": "XDEBUG_MODE=coverage vendor/bin/phpunit --stop-on-failure",
+        "test-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html coverage",
         "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
         "psalm": "vendor/bin/psalm"
     },
