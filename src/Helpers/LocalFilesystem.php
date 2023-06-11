@@ -11,7 +11,7 @@ class LocalFilesystem
 
         if (is_dir($dir) === true) {
             $totalSize = 0;
-            $os = strtoupper(substr(PHP_OS, 0, 3));
+            $os        = strtoupper(substr(PHP_OS, 0, 3));
             // If on a Unix Host (Linux, Mac OS)
             if ($os !== 'WIN') {
                 $io = popen('/usr/bin/du -sb ' . $dir, 'r');
@@ -26,9 +26,9 @@ class LocalFilesystem
             if ($os === 'WIN' && extension_loaded('com_dotnet')) {
                 $obj = new \COM('scripting.filesystemobject');
                 if (is_object($obj)) {
-                    $ref = $obj->getfolder($dir);
+                    $ref       = $obj->getfolder($dir);
                     $totalSize = $ref->size;
-                    $obj = null;
+                    $obj       = null;
 
                     return (int)$totalSize;
                 }
