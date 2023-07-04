@@ -13,10 +13,10 @@ class ArrHelperTest extends TestCase
         $config = [
             'seed' => [
                 'css' => 'foo',
-                'js' => 'bar',
+                'js'  => 'bar',
             ],
-            'base' => 'baz',
-            'separator' => ',',
+            'base'        => 'baz',
+            'separator'   => ',',
             'application' => [
                 'config' => [
                     'lang' => 'en-US',

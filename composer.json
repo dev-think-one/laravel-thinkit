@@ -1,16 +1,16 @@
 {
-    "name": "yaroslawww/laravel-thinkit",
+    "name": "think.studio/laravel-thinkit",
     "description": "Laravel small kit for quicker development.",
     "keywords": [
         "laravel",
         "kit"
     ],
-    "homepage": "https://github.com/yaroslawww/laravel-thinkit",
+    "homepage": "https://github.com/dev-think-one/laravel-thinkit",
     "license": "MIT",
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yaroslav.georgitsa@gmail.com",
+            "email": "yg@think.studio",
             "homepage": "https://github.com/yaroslawww",
             "role": "Developer"
         }

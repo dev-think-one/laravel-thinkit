@@ -11,7 +11,7 @@ return [
         'uri' => env('APP_PHPINFO_URI', 'php'),
         // Environments allows to see page without password
         'env_no_pass' => \ThinKit\Helpers\Env::strToArray(env('APP_PHPINFO_ENV', 'local,development')),
-        'info_pass'   => env('APP_PHPINFO_PASS', 'APP630461'),
+        'info_pass'   => env('APP_PHPINFO_PASS'),
     ],
 
     /*
