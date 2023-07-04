@@ -3,8 +3,9 @@
 namespace ThinKit\Tests\Fixtures;
 
 use ThinKit\Enums\HasNames;
+use ThinKit\Enums\NamedEnum;
 
-enum TypeEnum: string
+enum TypeEnum: string implements NamedEnum
 {
     use HasNames;
 

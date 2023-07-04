@@ -55,8 +55,9 @@ $carbonDate->format('Y-m-d H:i:s');
 
 ```php
 use ThinKit\Enums\HasNames;
+use ThinKit\Enums\NamedEnum;
 
-enum SalesCallType: string
+enum SalesCallType: string implements NamedEnum
 {
     use HasNames;
 

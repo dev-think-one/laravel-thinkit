@@ -1,8 +1,8 @@
 <?php
 
-namespace ThinKit\Contracts;
+namespace ThinKit\Enums;
 
-interface NamedEnum
+interface NamedEnum extends \BackedEnum
 {
     /**
      * Enumeration unit human-readable name
