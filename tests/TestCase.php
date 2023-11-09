@@ -2,13 +2,29 @@
 
 namespace ThinKit\Tests;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Orchestra\Testbench\Database\MigrateProcessor;
+
 class TestCase extends \Orchestra\Testbench\TestCase
 {
+    use RefreshDatabase;
+
     protected function getPackageProviders($app)
     {
         return [
             \ThinKit\ServiceProvider::class,
         ];
+    }
+
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadLaravelMigrations();
+
+        $migrator = new MigrateProcessor($this, [
+            '--path'     => __DIR__.'/Fixtures/migrations',
+            '--realpath' => true,
+        ]);
+        $migrator->up();
     }
 
     /**
