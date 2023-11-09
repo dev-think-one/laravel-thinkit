@@ -2,6 +2,8 @@
 
 namespace ThinKit;
 
+use ThinKit\Console\Commands\DeleteExpiredCommand;
+
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function boot()
@@ -15,7 +17,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
 
             $this->commands([
-                //
+                DeleteExpiredCommand::class,
             ]);
         }
     }

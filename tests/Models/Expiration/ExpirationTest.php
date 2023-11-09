@@ -42,4 +42,14 @@ class ExpirationTest extends TestCase
         $this->assertTrue($model->willBeExpiredAt(Carbon::now()->addDays(4)));
     }
 
+    /** @test */
+    public function if_null_not_expired()
+    {
+        /** @var Coupon $model */
+        $model = Coupon::create(['description' => 'foo']);
+
+        $this->assertFalse($model->expired());
+        $this->assertFalse($model->willBeExpiredAt(Carbon::now()->addDays(4)));
+    }
+
 }
