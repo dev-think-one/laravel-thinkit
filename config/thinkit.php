@@ -20,9 +20,9 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'main_dev_email' => env('MAIN_DEV_EMAIL', 'yg@think.studio'),
+    'main_dev_email' => env('MAIN_DEV_EMAIL', 'dev@think.studio'),
     'dev_emails'     => \ThinKit\Helpers\Env::strToArray(
-        env('APP_DEV_EMAILS', env('MAIN_DEV_EMAIL', 'yg@think.studio'))
+        env('APP_DEV_EMAILS', env('MAIN_DEV_EMAIL', 'dev@think.studio'))
     ),
 
 
