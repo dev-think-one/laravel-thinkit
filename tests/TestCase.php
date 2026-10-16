@@ -3,7 +3,6 @@
 namespace ThinKit\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Orchestra\Testbench\Database\MigrateProcessor;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -14,17 +13,6 @@ class TestCase extends \Orchestra\Testbench\TestCase
         return [
             \ThinKit\ServiceProvider::class,
         ];
-    }
-
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadLaravelMigrations();
-
-        $migrator = new MigrateProcessor($this, [
-            '--path'     => __DIR__.'/Fixtures/migrations',
-            '--realpath' => true,
-        ]);
-        $migrator->up();
     }
 
     /**
@@ -42,6 +30,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
             'database' => ':memory:',
             'prefix'   => '',
         ]);
+
+        // Register migrations so RefreshDatabase runs them,
+        // testbench 9+ executes "migrate:fresh" what drops tables created in defineDatabaseMigrations().
+        $app->afterResolving('migrator', function ($migrator) use ($app) {
+            $migrator->path($app->basePath('migrations'));
+            $migrator->path(__DIR__.'/Fixtures/migrations');
+        });
 
         // $app['config']->set('thinkit.some_key', 'some_value');
     }

@@ -18,7 +18,7 @@ class DeleteExpiredCommand extends Command
 
     public function handle()
     {
-        $modelName        = $this->argument('model');
+        $modelName        = (string)$this->argument('model');
         $timeoutInMinutes = (int)$this->option('timeout');
         $isForceDelete    = (bool)$this->option('force');
 
